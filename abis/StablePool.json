@@ -106,6 +106,42 @@
     "inputs": [
       {
         "indexed": true,
+        "internalType": "contract IERC20",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "targetPercentage",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "criticalPercentage",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "feePercentage",
+            "type": "uint64"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct IAssetManager.PoolConfig",
+        "name": "target",
+        "type": "tuple"
+      }
+    ],
+    "name": "TargetManagerPoolConfigChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
         "internalType": "address",
         "name": "from",
         "type": "address"
@@ -770,6 +806,41 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "contract IERC20",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "targetPercentage",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "criticalPercentage",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "feePercentage",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct IAssetManager.PoolConfig",
+        "name": "poolConfig",
+        "type": "tuple"
+      }
+    ],
+    "name": "setAssetManagerPoolConfig",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
